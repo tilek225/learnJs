@@ -74,5 +74,5 @@
 // console.log(name);
 
 //trim
-let name = ' Tilek ';
-console.log(name.trim());
+// let name = ' Tilek ';
+// console.log(name.trim()  );
