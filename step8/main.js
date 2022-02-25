@@ -68,3 +68,19 @@
 // };
 // console.log(task1(['Honda', 'Mers', 'BMW', 'Porshe']));
 
+//Reduce
+// const task = (arr) => {
+//     return arr.reduce((acc, rec, idx) => acc + rec, 0);
+// };
+// console.log(task([1, 2, 3, 4, 5]));
+
+// const task12 = (obj) => {
+//     return Object.keys(obj).
+//         reduce((acc, rec) => {
+//             if(typeof obj[rec] === 'string'){
+//                 return {...acc, [rec] : obj[rec]}
+//             }
+//             return  acc
+//     }, {})
+// };
+// console.log(task12({ name: 'pilot', isActive: true }));
