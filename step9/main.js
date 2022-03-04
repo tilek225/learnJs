@@ -1,100 +1,165 @@
-// Рекурсия
+// const task = (arr, arr1) => {
+//     return arr.reduce((acc, rec, idx) => {
+//         return [...acc, rec + arr1[idx]]
+//     }, [])
+// }
+// console.log(task([2, 3], [1, 4]));
 
-// Рекурсивная функция - это функция которая вызывает сама себя до окончания памяти
-// В рекурсии есть главное условие -  это условие выхода из рекурсии
-// Рекурсия работает намного быстрее чем цикл
+// acc = [];
+// rec = 2;
+// arr2[idx] = [1,4][0] = 1
+// return [...[], 2+1] = acc
 
-// let i = 0;
-// const task = () => {
-//     if(i === 400){
-//         return i;
-//     }
-//     i++;
-//     console.log(i);
-//     task();
-// };
-// task();
+// acc = [3];
+// rec = 3;
+// arr2[idx] = [1, 4][1] = 4;
+// return [...[3], 3 + 4] = acc
 
 
-// Каррирование - это когда функция принимает более 1 параметра и которую мы делим на группу
-// функции которые принимает по 1 параметру и каждая функция возвращает другую ввиде анонимной
+// const task = arr => {
+//     return arr.reduce((acc, rec) => {
+//         return [...acc, rec * 2]
+//     }, [])
+// }
+// console.log(task([2, 3, 1, 4]));
 
-// const task = (a, b, c) => {
-//     return a + b + c;
-// };
-// console.log(task(5, 7, 10));
+// const task = arr => {
+//     return arr.reduce((acc, rec) => {
+//         return [...acc, rec.id]
+//     }, [])
+// }
+// console.log(task([{id : '100'}, {id : 5}, {id: true}, {id : undefined}]));
 
-// const task = a => {
-//     return b => {
-//         return c => {
-//             return a + b + c
+// const task = arr => {
+//     return arr.reduce((acc, rec) => {
+//         return [...acc, `<div>${rec}</div>`]
+//     }, [])
+// }
+// console.log(task([1, 2]));
+
+// const task = arr => {
+//     return arr.reduce((acc, rec) => {
+//         if (rec.length % 2 === 0) {
+//             return [...acc, rec]
 //         }
-//     }
-// };
-// console.log(task(5)(10)(7));
+//         return acc
+//     }, [])
+// }
+// console.log(task(['ab', 'abc', 'abcd']));
 
-// const task2 = task(5);
-// const task3 = task2(10);
-// console.log(task3(7));
+// acc = [];
+// rec = 'ab';
+// rec.length = 2;
+// 2 % 2 === 0 = true;
+// return [...[], 'ab'] = acc;
 
+// acc = ['ab'];
+// rec = 'abc';
+// rec.length = 3;
+// 3 % 2 === 0 = false;
+// return ['ab'] = acc;
 
-// Замыкание
-// Замыкание - это функция(внутр) внутри другой функции(главная) и наша внутр функция получает доступ ко всем
-// параметрам и переменным главной функции
-//
-// const task = (a) => {
-//     let num = 5;
-//     return (b) => {
-//         return a + b + num
-//     }
-// };
-// console.log(task(5));
+// acc = ['ab'];
+// rec = 'abcd';
+// rec.length = 4
+// 4 % 2 === 0 = true;
+// return [...['ab'], 'abcd'] = acc;
 
+// const task = arr =>  {
+//     return arr.reduce((acc, rec) => {
+//         if((rec * 2) % 10 === 0){
+//             return [...acc, rec * 2]
+//         }
+//         return acc
+//     }, [])
+// }
+// console.log(task([1, 2, 3, 7, 10, 5]));
 
-// ES6 syntax
+// const task = arr => {
+//     return arr.reduce((acc, rec) => {
+//         if (rec) {
+//             return [...acc, rec]
+//         }
+//         return acc
+//     }, [])
+// }
+// console.log(task([true, false, true, false]));
 
-// Spread operator - замена concat [...arr, 1]
-// Шаблоная строка - `${a}`
-// Ленивая инициализация - когда я могу задать значения параметров функции сразу
-// Short hand - работа с объектом, то есть ког
-// const task = (a, b = 3 ) => {
-//     return a + b
-// };
-// console.log(task(1));
-
-// let name = 'Max';
-// let obj = {
-//     age : 23,
-//     name,
-//     react: true
-// };
-// console.log(obj);
-
-// Деструктуризация - вывод отдельного ключа в объекте в отдельную переменную
-// let obj = {
-//     name : 'Max',
-//     age : 23,
-//     react : true
-// };
-//
-// let {name, age, react} = obj;
-// console.log(name);
-// console.log(age);
-// console.log(react);
-
-// let arr = ['Ivan', 'Bolvan', 'Alex'];
-// let [first, second, third] = arr;
-//
-// console.log(first);
-// console.log(second);
-// console.log(third);
+// const task = arr => {
+//     return arr.reduce((acc, rec) => {
+//         if (rec === undefined) {
+//             return acc
+//         }
+//         return [...acc, rec]
+//     }, [])
+// }
+// console.log(task([true, false,, undefined, true, undefinde,  false]));
 
 
-// Rest operator - принимается в параметрах функции и всегда является последним , то есть - это означает, что это все остальное
-// и это у нас массив
+// const task = arr => {
+//     return arr.reduce((acc, rec) => acc + rec, 0)
+// }
+// console.log(task([1, 2, 3, 4, 5]));
 
-// const task = (a, b, ...other) => {
-//     return other
-// };
-// console.log(task(1, 2, 6, 8, 11, 13, 24, 26));
+// const task = arr => {
+//     return arr.reduce((acc, rec) => {
+//         return acc && rec;
+//     }, true)
+// }
+// console.log(task([true, false, true, true]));
 
+// const task = arr => {
+//     return arr.reduce((acc, rec, idx) => {
+//         return { ...acc, [`field${idx + 1}`]: rec }
+//     }, {})
+// }
+// console.log(task([true, 1, 'wow', 'you are smart brooo']));
+
+// acc = {};
+// rec = true;
+// idx = 0;
+// return { ...{}, field1: true } = acc;
+
+// acc = { field1: true }
+// rec = 1;
+// idx = 1;
+// return {...{field1: true}, fiedl2: 1} = acc;
+
+// acc = {field1: true, field2 = 1};
+// rec = 'wow';
+// idx = 2;
+// return {...{field1: true, field2 : 1}, field3: 'wow'} = acc;
+
+// const task = obj => {
+//     return Object.keys(obj).reduce((acc, rec) => {
+//         if(typeof rec === 'string'){
+//             return {...acc, [rec]: obj[rec]}
+//         }
+//         return acc;
+//     }, {})
+// }
+// console.log(task({name:'pilot', isActive: true}));
+
+// const task = obj => {
+//     return Object.keys(obj).reduce((acc, rec) => {
+//         if (!obj[rec]) {
+//             return [...acc, rec]
+//         }
+//         return acc
+//     }, [])
+// }
+// console.log(task({isActive: false, isPilot: true}));
+
+// const task = arr => {
+//     return arr.reduce((acc, rec ) => {
+//         return acc + rec / arr.length
+//     })
+// }
+// console.log(task[4, 6]);
+
+// const task = (arr, num) => {
+//     return arr.reduce((acc, rec) => {
+//         return rec(acc)
+//     }, num)
+// }
+// console.log(task[(a) => a + 1, (a) => a * 2], 5);
