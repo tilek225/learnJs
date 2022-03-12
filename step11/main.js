@@ -176,6 +176,8 @@
 let form = document.querySelector('form');
 let listItem = document.querySelectorAll('li')
 let list = document.querySelector('ul');
+let btn = document.querySelectorAll('.btn')
+let checked = document.querySelectorAll('.checked')
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -183,14 +185,50 @@ form.addEventListener('submit', (e) => {
     let li = document.createElement('li');
     li.textContent = e.target[0].value;
     list.append(li);
-    e.target[0].value = ''
+    e.target[0].value = '';
+
+    let btn = document.createElement('button');
+    btn.textContent = 'Delete';
+    li.append(btn);
+    btn.addEventListener('click', e => {
+        e.target.parentElement.remove();
+    })
+
+    let checked = document.createElement('button');
+    checked.textContent = 'done';
+    li.append(checked);
+    checked.addEventListener('click', e => {
+        if (e.target.parentElement.className !== 'done') {
+            e.target.parentElement.className = 'done'
+        } else {
+            e.target.parentElement.className = ''
+        }
+    })
+
 });
+Array.from(checked).forEach(item => {
+    item.addEventListener('click', e => {
+        if (!e.target.parentElement.classList.contains('done')) {
+            e.target.parentElement.classList.add('done')
+        } else {
+            e.target.parentElement.classList.remove('done');
+        }
+    })
+})
+
+Array.from(btn).forEach(item => {
+    item.addEventListener('click', e => {
+        e.target.parentElement.remove();
+    })
+})
 
 Array.from(listItem).forEach((item) => {
     item.style.cursor = 'pointer';
     item.addEventListener('click', (e) => {
-      item.style.color = `
-        rgb(${Math.floor(Math.random() * 225)}, ${Math.floor(Math.random() * 225)}, ${Math.floor(Math.random() * 225)})
+        item.style.color = `
+        rgb(${Math.floor(Math.random() * 225)},
+            ${Math.floor(Math.random() * 225)}, 
+            ${Math.floor(Math.random() * 225)})
         `
     })
 });
