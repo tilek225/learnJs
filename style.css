@@ -1,3 +1,78 @@
-.done{
+/* .done{
     text-decoration: line-through;
+} */
+
+*{
+    padding: 0;
+    margin:0 ;
+    box-sizing: border-box;
+}
+.todo{
+    background-color: khaki;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.todo__content{
+    width: 400px;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 20px;
+}
+.todo__title{
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.todo__form{
+    display: flex;
+    column-gap: 10px;
+}
+.todo__form .todo__input{
+    width: 70%;
+    height: 40px;
+    border-radius: 5px;
+    border:none;
+    padding-left: 10px;
+}
+.todo__form .todo__btn{
+    width: 30%;
+    height: 40px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.todo__list{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    padding: 20px 0;
+}
+.todo__item{
+    display: flex;
+    justify-content: space-between;
+}
+.todo__footer{
+    display:flex;
+    justify-content: space-between;
+}
+.todo__footer-btns{
+    display: flex;
+    column-gap: 10px;
+}
+.status__btn{
+    padding:5px 10px;
+    color: white;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+}
+.todo__empty{
+    padding: 20px 0;
 }

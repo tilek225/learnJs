@@ -30,7 +30,7 @@
 <!--</form>-->
 
 
-<form action="">
+<!-- <form action="">
     <input type="text" required>
     <button type="submit">Push</button>
 </form>
@@ -51,8 +51,47 @@
         <button class="btn">Delete</button>
         <button class="checked">done</button>
     </li>
-</ul>
+</ul> -->
 
-<script src="step11/main.js"></script>
+<section class="todo">
+    <div class="todo__content">
+        <h1 class="todo__title">TodoList</h1>
+        <form class="todo__form">
+            <input maxlength="20" minlength="5" placeholder="Todo text" class="todo__input" type="text" required>
+            <button class="todo__btn add" type="submit" >
+                ADD
+            </button>
+        </form>
+
+        <h2 class="todo__empty">Ваш список задач пуст</h2>
+
+        <ul class="todo__list">
+            <!-- <li class="todo__item">
+                <span class="todo__item-title">Название задачи : <span></span></span>
+                <div class="todo__item-btns">
+                    <button class="todo__item-btn done">Done</button>
+                    <button class="todo__item-btn important">Important</button>
+                    <button class="todo__item-btn delete">Delete</button>
+                </div>
+            </li> -->
+            
+        </ul>
+
+        
+        <div class="todo__footer">
+            <p class="todo__count">Todo count : <span class="todo__count-num"></span></p>
+            <div class="todo__footer-btns">
+                <button style="background-color: purple" class="status__btn status__all" >All</button>
+                <button style="background-color: gold" class="status__btn status__important">Important</button>
+                <button style="background-color: green" class="status__btn status__done">Done</button>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+
+<script src="step12/main.js"></script>
 </body>
 </html>
