@@ -53,9 +53,10 @@
     </li>
 </ul> -->
 
-<section class="todo">
+<section class="todo" style="background-color: transparent" id="vanta">
     <div class="todo__content">
         <h1 class="todo__title">TodoList</h1>
+        <h4>Status: <span class="todo__status">All</span></h4>
         <form class="todo__form">
             <input maxlength="20" minlength="5" placeholder="Todo text" class="todo__input" type="text" required>
             <button class="todo__btn add" type="submit" >
@@ -85,13 +86,28 @@
                 <button style="background-color: gold" class="status__btn status__important">Important</button>
                 <button style="background-color: green" class="status__btn status__done">Done</button>
             </div>
-            
+        </div>
+        <div class="todo__delete">
+            <button class="delete__btn">Delete all</button>
         </div>
     </div>
 </section>
 
 
-
+<script src="step12/three.min.js"></script>
+<script src="step12/vanta.birds.min.js"></script>
+<script>
+    VANTA.BIRDS({
+        el: "#vanta",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.00,
+        minWidth: 200.00,
+        scale: 1.00,
+        scaleMobile: 1.00
+    })
+</script>
 <script src="step12/main.js"></script>
 </body>
 </html>
